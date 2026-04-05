@@ -8,7 +8,7 @@
   - 核心設計靈感：Google Pregel、Apache Beam、NetworkX
   - 適用場景：長時間執行的 AI agent、多步驟工作流
 
-- [ ] **1.2 核心原語 (Core Primitives)**
+- [ ] **1.2 核心原語 (Core Primitives)** → [詳細筆記](src/phase1/1.2-core-primitives.md)
   - `StateGraph`：主要的圖抽象
   - `Node`：工作單元（LLM、函數、agent）
   - `Edge`：節點之間的連接（基本邊、條件邊）
