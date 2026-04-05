@@ -27,19 +27,19 @@
 
 ## Phase 2: State 管理深入
 
-- [ ] **2.1 State Schema 設計**
+- [ ] **2.1 State Schema 設計** → [詳細筆記](src/phase2/2.1-state-schema-design.md)
   - 使用 TypedDict 定義 State
   - 使用 Pydantic Model 定義 State
   - `MessagesState`：內建的訊息型 State Schema
   - Input / Output Schema 分離設計
 
-- [ ] **2.2 Reducer 機制**
+- [ ] **2.2 Reducer 機制** → [詳細筆記](src/phase2/2.2-reducer-mechanism.md)
   - 預設 Reducer 行為
   - 自定義 Reducer 函數
   - 使用 `Annotated` 語法指定 Reducer
   - `Overwrite` 繞過 Reducer
 
-- [ ] **2.3 Private State**
+- [ ] **2.3 Private State** → [詳細筆記](src/phase2/2.3-private-state.md)
   - 節點之間的私有狀態傳遞
   - 不暴露給外部的內部資料
 
