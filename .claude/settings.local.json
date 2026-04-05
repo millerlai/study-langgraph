@@ -17,7 +17,11 @@
       "WebFetch(domain:pypi.org)",
       "WebFetch(domain:blog.langchain.dev)",
       "WebFetch(domain:blog.langchain.com)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
     ]
   }
 }
