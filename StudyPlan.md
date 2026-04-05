@@ -18,7 +18,7 @@
   - `END` 節點：標記執行終止
   - `Command`：結合控制流與 State 更新
 
-- [ ] **1.3 第一個 Graph — Quickstart**
+- [ ] **1.3 第一個 Graph — Quickstart** → [詳細筆記](src/phase1/1.3-first-graph-quickstart.md)
   - 建立基本聊天機器人
   - 加入工具（Tool Calling）
   - 加入記憶（Checkpointing）
