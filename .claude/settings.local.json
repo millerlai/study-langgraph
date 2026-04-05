@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -L \"https://langchain-ai.github.io/langgraph/\")",
+      "Bash(curl -s -L \"https://langchain-ai.github.io/langgraph/concepts/\")",
+      "Bash(curl -s -L \"https://langchain-ai.github.io/langgraph/tutorials/\")",
+      "Bash(curl -s -L \"https://langchain-ai.github.io/langgraph/how-tos/\")",
+      "WebFetch(domain:docs.langchain.com)",
+      "WebFetch(domain:langchain-ai.github.io)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:www.langchain.com)",
+      "Bash(curl -s -L \"https://langchain-ai.github.io/langgraph/concepts/high_level/\")",
+      "Bash(curl -s -L \"https://langchain-ai.github.io/langgraph/concepts/low_level/\")",
+      "Bash(curl -s -L \"https://langchain-ai.github.io/langgraph/tutorials/introduction/\")",
+      "WebFetch(domain:pypi.org)",
+      "WebFetch(domain:blog.langchain.dev)",
+      "WebFetch(domain:blog.langchain.com)",
+      "Bash(git add:*)"
+    ]
+  }
+}
