@@ -10,6 +10,7 @@
 - 形成 ReAct 迴圈：llm → tool → llm → ... → END
 """
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from langchain_core.tools import tool
 from langgraph.graph import StateGraph, MessagesState, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -51,7 +52,10 @@ tools = [get_weather, calculate]
 # ============================================================
 # 2. 初始化 LLM 並綁定工具
 # ============================================================
-model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+#model = ChatOpenAI(model="gpt-5-nano", temperature=0) # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+
+model = ChatAnthropic(model="claude-sonnet-4-5") # Set ANTHROPIC_API_KEY in environment variables , you could create API key at https://platform.claude.com/settings/keys
+
 
 # bind_tools 讓 LLM 知道有哪些工具可用
 # LLM 會在適當時機自動決定是否呼叫工具

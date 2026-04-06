@@ -9,12 +9,16 @@
 - 最簡單的 START → llm → END 線性流程
 """
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import AnthropicLLM
+from langchain_anthropic import ChatAnthropic
 from langgraph.graph import StateGraph, MessagesState, START, END
 
 # ============================================================
 # 1. 初始化 LLM
 # ============================================================
-model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+#model = ChatOpenAI(model="gpt-5-nano", temperature=0) # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+
+model = ChatAnthropic(model="claude-sonnet-4-5") # Set ANTHROPIC_API_KEY in environment variables , you could create API key at https://platform.claude.com/settings/keys
 
 # ============================================================
 # 2. 定義 Node
