@@ -39,7 +39,7 @@
   - 使用 `Annotated` 語法指定 Reducer
   - `Overwrite` 繞過 Reducer
 
-- [ ] **2.3 Private State** → [詳細筆記](src/phase02/2.3-private-state.md)
+- [x] **2.3 Private State** → [詳細筆記](src/phase02/2.3-private-state.md)
   - 節點之間的私有狀態傳遞
   - 不暴露給外部的內部資料
 
@@ -47,7 +47,7 @@
 
 ## Phase 3: 控制流與圖結構
 
-- [ ] **3.1 基本控制流** → [詳細筆記](src/phase03/3.1-basic-control-flow.md)
+- [x] **3.1 基本控制流** → [詳細筆記](src/phase03/3.1-basic-control-flow.md)
   - 線性序列（Sequential Steps）
   - 條件分支（Conditional Branching）
   - 迴圈（Loops）
