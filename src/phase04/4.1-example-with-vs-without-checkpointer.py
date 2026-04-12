@@ -24,12 +24,13 @@ r2 = graph_no_cp.invoke({"count": 0})
 print(r2)  # {'count': 1}  ← 每次都從 0 開始
 
 # === 有 checkpointer：接續上次的 State ===
+
 graph_with_cp = builder.compile(checkpointer=InMemorySaver())
 config = {"configurable": {"thread_id": "counter_thread"}}
 
 r1 = graph_with_cp.invoke({"count": 0}, config)
 print(r1)  # {'count': 1}
-r2 = graph_with_cp.invoke({"count": 0}, config)
+r2 = graph_with_cp.invoke({}, config)
 print(r2)  # {'count': 2}  ← 接續上次的 count=1
-r3 = graph_with_cp.invoke({"count": 0}, config)
+r3 = graph_with_cp.invoke({}, config)
 print(r3)  # {'count': 3}  ← 接續上次的 count=2
