@@ -24,18 +24,18 @@ def sensitive_action(state: MyState) -> dict:
     # interrupt() 會暫停整個 graph，等待人類回應
     # 傳入的字串是給人類看的提示訊息
     human_decision = interrupt(
-        f"⚠️ 即將執行敏感操作：{state['result']}\n"
+        f"[WARNING] 即將執行敏感操作：{state['result']}\n"
         f"請輸入 'approved' 核准，或其他任意值拒絕。"
     )
 
     if human_decision == "approved":
         return {
-            "result": f"✅ 已執行：{state['request']}",
+            "result": f"[OK] 已執行：{state['request']}",
             "approved": True,
         }
     else:
         return {
-            "result": f"❌ 已取消：{state['request']}",
+            "result": f"[CANCELLED] 已取消：{state['request']}",
             "approved": False,
         }
 

@@ -65,12 +65,12 @@ print(f"目前 State: validated={state.values['validated']}")
 # 目前 State: validated=True
 
 # ============================================================
-# 恢復：用 Command(resume=None) 或直接傳 None
-# 靜態 breakpoint 不需要傳 resume 值
+# 恢復：用 Command(resume=True) 或直接傳 None
+# 靜態 breakpoint 不需要傳有意義的 resume 值
 # ============================================================
 print("\n=== 恢復執行 ===")
 for chunk in graph.stream(
-    Command(resume=None),
+    Command(resume=True),
     config=config,
     stream_mode="updates",
 ):

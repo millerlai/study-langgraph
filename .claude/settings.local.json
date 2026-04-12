@@ -27,7 +27,9 @@
       "Bash(python3 -c ':*)",
       "Bash(ls -d src/phase*/)",
       "Bash(uv run:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(find src/phase* -name '*.py')",
+      "Bash(uv add:*)"
     ]
   }
 }

@@ -43,5 +43,5 @@ for i, state in enumerate(graph.get_state_history(config)):
     print(f"  next:    {state.next}")
     print(f"  source:  {state.metadata['source']}")
     print(f"  step:    {state.metadata['step']}")
-    print(f"  writes:  {state.metadata['writes']}")
+    print(f"  writes:  {state.metadata.get('writes', 'N/A')}")
     print()

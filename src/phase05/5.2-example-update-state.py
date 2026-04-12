@@ -66,6 +66,6 @@ print(f"已審核: {state.values['reviewed']}")
 # 已審核: True
 
 # 恢復執行
-result = graph.invoke(Command(resume=None), config=config)
+result = graph.invoke(Command(resume=True), config=config)
 print(f"最終結果: {result['final']}")
 # 最終結果: [已審核] LangGraph 是一個強大的低階 AI agent 編排框架，提供精細的狀態管理和流程控制。

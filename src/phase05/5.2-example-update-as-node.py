@@ -53,6 +53,6 @@ graph.update_state(
 )
 
 # 恢復 — 直接從 step_c 開始（因為 step_b 已經「被人類執行」了）
-result = graph.invoke(Command(resume=None), config=config)
+result = graph.invoke(Command(resume=True), config=config)
 print(f"最終結果: {result['value']}")
 # 最終結果: start -> A -> B(人類修改) -> C

@@ -48,10 +48,9 @@ def divide(a: float, b: float) -> float:
 # 3. 啟動 Server（使用 stdio 傳輸）
 # ============================================================
 if __name__ == "__main__":
+    print("MCP Math Server 定義完成")
+    print("工具: add, multiply, divide")
+    print("啟動方式: python 12.2-example-mcp-math-server.py")
     mcp.run(transport="stdio")
     # 也可以用 HTTP 傳輸：
     # mcp.run(transport="streamable-http")
-
-print("MCP Math Server 定義完成")
-print("工具: add, multiply, divide")
-print("啟動方式: python 12.2-example-mcp-math-server.py")

@@ -47,6 +47,6 @@ print(f"下一步: {state.next}")
 # 下一步: ('summarize',)
 
 # 人類檢查搜尋結果後，決定繼續
-result = graph.invoke(Command(resume=None), config=config)
+result = graph.invoke(Command(resume=True), config=config)
 print(f"摘要: {result['summary']}")
 # 摘要: 根據 3 筆結果生成摘要

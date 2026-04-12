@@ -47,5 +47,5 @@ for i, state in enumerate(all_states):
           f"source={state.metadata['source']} ---")
     print(f"  values:  {state.values}")
     print(f"  next:    {state.next}")
-    print(f"  writes:  {state.metadata['writes']}")
+    print(f"  writes:  {state.metadata.get('writes', 'N/A')}")
     print()

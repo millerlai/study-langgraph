@@ -57,7 +57,7 @@ print(f"\n大金額 — 暫停在: {state.next}")
 # 恢復時，NodeInterrupt 的節點會「重新執行」
 # 需要先修改 State 讓條件不再觸發，或用 update 修改
 result = graph.invoke(
-    Command(resume=None, update={"amount": 8000}),
+    Command(resume=True, update={"amount": 8000}),
     config=config_large,
 )
 print(f"修改後結果: {result['result']}")

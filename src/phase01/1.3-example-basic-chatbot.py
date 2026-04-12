@@ -12,7 +12,8 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import AnthropicLLM
 from langchain_anthropic import ChatAnthropic
 from langgraph.graph import StateGraph, MessagesState, START, END
-
+from dotenv import load_dotenv
+load_dotenv()  # loads .env into os.environ
 # ============================================================
 # 1. 初始化 LLM
 # ============================================================
