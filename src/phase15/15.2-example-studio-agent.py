@@ -1,11 +1,12 @@
 # 15.2 範例：供 Studio 連接的範例 agent
 # 搭配 langgraph.json 使用，用 langgraph dev 啟動後可在 Studio 中操作
 # 需要：pip install langgraph langchain-openai langchain-core
-# 需要：設定 OPENAI_API_KEY 環境變數
+# 需要：設定 ANTHROPIC_API_KEY 或 OPENAI_API_KEY 環境變數
 
 from typing import Annotated, Literal
 from typing_extensions import TypedDict
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import AnyMessage
 from langchain_core.tools import tool
 from langgraph.prebuilt import ToolNode
@@ -30,7 +31,8 @@ def calculator(expression: str) -> str:
 
 tools = [search, calculator]
 tool_node = ToolNode(tools)
-model = ChatOpenAI(model="gpt-4o-mini", temperature=0).bind_tools(tools)
+#model = ChatOpenAI(model="gpt-4o-mini", temperature=0).bind_tools(tools)  # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+model = ChatAnthropic(model="claude-sonnet-4-5").bind_tools(tools)  # Set ANTHROPIC_API_KEY in environment variables, you could create API key at https://platform.claude.com/settings/keys
 
 
 def should_continue(state: MessagesState) -> Literal["tools", "__end__"]:

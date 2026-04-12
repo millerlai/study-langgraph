@@ -1,6 +1,6 @@
 # 6.1 範例：messages 模式搭配真實 LLM
 # 展示即時顯示 LLM token 的完整使用模式（此處用模擬回應）
-# 注意：實際使用需安裝 langchain-openai 或其他 provider，並設定 API key
+# 注意：實際使用需安裝 langchain-openai 或 langchain-anthropic 等 provider，並設定 ANTHROPIC_API_KEY 或 OPENAI_API_KEY 環境變數
 """
 messages 模式搭配真實 LLM（需要安裝 langchain-openai 或其他 provider）
 這裡展示的是完整的使用模式
@@ -11,7 +11,9 @@ from langchain_core.messages import AnyMessage, HumanMessage
 
 # 假設已安裝並設定好 LLM：
 # from langchain_openai import ChatOpenAI
-# llm = ChatOpenAI(model="gpt-4o-mini", streaming=True)
+# llm = ChatOpenAI(model="gpt-4o-mini", streaming=True)  # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+# from langchain_anthropic import ChatAnthropic
+# llm = ChatAnthropic(model="claude-sonnet-4-5", streaming=True)  # Set ANTHROPIC_API_KEY in environment variables, you could create API key at https://platform.claude.com/settings/keys
 
 class State(TypedDict):
     messages: Annotated[list[AnyMessage], add_messages]

@@ -1,11 +1,12 @@
 # 13.1 範例：Adaptive RAG — 根據問題類型自動選擇檢索策略
-# 需要設定 OPENAI_API_KEY 環境變數
+# 需要設定 ANTHROPIC_API_KEY 或 OPENAI_API_KEY 環境變數
 # 需要安裝：pip install langgraph langchain-openai langchain-community
 
 import os
 import operator
 from typing import TypedDict, Literal, Annotated
 from langchain.chat_models import init_chat_model
+from langchain_anthropic import ChatAnthropic
 from langchain_core.documents import Document
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_openai import OpenAIEmbeddings
@@ -37,7 +38,8 @@ retriever = vectorstore.as_retriever()
 
 
 # ---- LLM 初始化 ----
-llm = init_chat_model("gpt-4o-mini", temperature=0)
+#llm = init_chat_model("gpt-4o-mini", temperature=0)  # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+llm = ChatAnthropic(model="claude-sonnet-4-5")  # Set ANTHROPIC_API_KEY in environment variables, you could create API key at https://platform.claude.com/settings/keys
 
 
 # ---- 路由分類器 ----

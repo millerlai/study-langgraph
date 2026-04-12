@@ -1,11 +1,12 @@
 # 15.1 範例：LangGraph + LangChain 自動追蹤
 # 只需設定環境變數，無需額外程式碼
 # 需要：pip install langgraph langchain-openai langchain-core
-# 需要：設定 LANGSMITH_API_KEY 和 OPENAI_API_KEY 環境變數
+# 需要：設定 LANGSMITH_API_KEY 和 ANTHROPIC_API_KEY 或 OPENAI_API_KEY 環境變數
 
 import os
 from typing import Literal, Annotated
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import AnyMessage
 from langchain_core.tools import tool
 from langgraph.prebuilt import ToolNode
@@ -30,7 +31,8 @@ def search(query: str) -> str:
 tools = [search]
 tool_node = ToolNode(tools)
 
-model = ChatOpenAI(model="gpt-4o-mini", temperature=0).bind_tools(tools)
+#model = ChatOpenAI(model="gpt-4o-mini", temperature=0).bind_tools(tools)  # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+model = ChatAnthropic(model="claude-sonnet-4-5").bind_tools(tools)  # Set ANTHROPIC_API_KEY in environment variables, you could create API key at https://platform.claude.com/settings/keys
 
 
 def should_continue(state: MessagesState) -> Literal["tools", "__end__"]:

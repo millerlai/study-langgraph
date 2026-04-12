@@ -2,13 +2,13 @@
 
 ## Phase 1: 基礎概念
 
-- [ ] **1.1 LangGraph 概觀** → [詳細筆記](src/phase01/1.1-langgraph-overview.md)
+- [x] **1.1 LangGraph 概觀** → [詳細筆記](src/phase01/1.1-langgraph-overview.md)
   - LangGraph 是什麼：低階的 stateful AI agent 編排框架
   - 與 LangChain 的關係與差異
   - 核心設計靈感：Google Pregel、Apache Beam、NetworkX
   - 適用場景：長時間執行的 AI agent、多步驟工作流
 
-- [ ] **1.2 核心原語 (Core Primitives)** → [詳細筆記](src/phase01/1.2-core-primitives.md)
+- [x] **1.2 核心原語 (Core Primitives)** → [詳細筆記](src/phase01/1.2-core-primitives.md)
   - `StateGraph`：主要的圖抽象
   - `Node`：工作單元（LLM、函數、agent）
   - `Edge`：節點之間的連接（基本邊、條件邊）
@@ -18,7 +18,7 @@
   - `END` 節點：標記執行終止
   - `Command`：結合控制流與 State 更新
 
-- [ ] **1.3 第一個 Graph — Quickstart** → [詳細筆記](src/phase01/1.3-first-graph-quickstart.md)
+- [x] **1.3 第一個 Graph — Quickstart** → [詳細筆記](src/phase01/1.3-first-graph-quickstart.md)
   - 建立基本聊天機器人
   - 加入工具（Tool Calling）
   - 加入記憶（Checkpointing）
@@ -27,13 +27,13 @@
 
 ## Phase 2: State 管理深入
 
-- [ ] **2.1 State Schema 設計** → [詳細筆記](src/phase02/2.1-state-schema-design.md)
+- [x] **2.1 State Schema 設計** → [詳細筆記](src/phase02/2.1-state-schema-design.md)
   - 使用 TypedDict 定義 State
   - 使用 Pydantic Model 定義 State
   - `MessagesState`：內建的訊息型 State Schema
   - Input / Output Schema 分離設計
 
-- [ ] **2.2 Reducer 機制** → [詳細筆記](src/phase02/2.2-reducer-mechanism.md)
+- [x] **2.2 Reducer 機制** → [詳細筆記](src/phase02/2.2-reducer-mechanism.md)
   - 預設 Reducer 行為
   - 自定義 Reducer 函數
   - 使用 `Annotated` 語法指定 Reducer

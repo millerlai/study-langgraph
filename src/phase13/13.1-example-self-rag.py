@@ -1,11 +1,12 @@
 # 13.1 範例：Self-RAG — 帶有文件評分與問題重寫的 RAG Agent
-# 需要設定 OPENAI_API_KEY 環境變數
+# 需要設定 ANTHROPIC_API_KEY 或 OPENAI_API_KEY 環境變數
 # 需要安裝：pip install langgraph langchain-openai langchain-community
 
 import os
 from typing import Literal
 from pydantic import BaseModel, Field
 from langchain.chat_models import init_chat_model
+from langchain_anthropic import ChatAnthropic
 from langchain.tools import tool
 from langchain_core.documents import Document
 from langchain_core.vectorstores import InMemoryVectorStore
@@ -41,7 +42,8 @@ def retrieve_docs(query: str) -> str:
 
 
 # ---- LLM ----
-llm = init_chat_model("gpt-4o-mini", temperature=0)
+#llm = init_chat_model("gpt-4o-mini", temperature=0)  # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+llm = ChatAnthropic(model="claude-sonnet-4-5")  # Set ANTHROPIC_API_KEY in environment variables, you could create API key at https://platform.claude.com/settings/keys
 
 
 # ---- 節點定義 ----

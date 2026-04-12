@@ -1,9 +1,10 @@
 # 13.1 範例：Agentic RAG — 讓 LLM 自行決定是否檢索
-# 需要設定 OPENAI_API_KEY 環境變數
+# 需要設定 ANTHROPIC_API_KEY 或 OPENAI_API_KEY 環境變數
 # 需要安裝：pip install langgraph langchain-openai langchain-community langchain-text-splitters
 
 import os
 from langchain.chat_models import init_chat_model
+from langchain_anthropic import ChatAnthropic
 from langchain.tools import tool
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_openai import OpenAIEmbeddings
@@ -60,7 +61,8 @@ def search_langgraph_docs(query: str) -> str:
 
 
 # ---- 第三步：定義節點 ----
-llm = init_chat_model("gpt-4o-mini", temperature=0)
+#llm = init_chat_model("gpt-4o-mini", temperature=0)  # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+llm = ChatAnthropic(model="claude-sonnet-4-5")  # Set ANTHROPIC_API_KEY in environment variables, you could create API key at https://platform.claude.com/settings/keys
 
 
 def generate_query_or_respond(state: MessagesState):

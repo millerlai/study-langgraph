@@ -1,11 +1,12 @@
 # 15.1 範例：LangGraph + LangSmith 完整整合
 # 包含 tracing、metadata、自訂 tag
 # 需要：pip install langgraph langchain-openai langchain-core
-# 需要：設定 LANGSMITH_API_KEY 和 OPENAI_API_KEY 環境變數
+# 需要：設定 LANGSMITH_API_KEY 和 ANTHROPIC_API_KEY 或 OPENAI_API_KEY 環境變數
 
 import os
 from typing import Annotated, Literal
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from langchain_core.tools import tool
 from langgraph.prebuilt import ToolNode
 from langgraph.graph import StateGraph, MessagesState, START, END
@@ -41,7 +42,8 @@ def get_weather(city: str) -> str:
 # === 建構 Agent ===
 tools = [calculator, get_weather]
 tool_node = ToolNode(tools)
-model = ChatOpenAI(model="gpt-4o-mini", temperature=0).bind_tools(tools)
+#model = ChatOpenAI(model="gpt-4o-mini", temperature=0).bind_tools(tools)  # Set OPENAI_API_KEY in environment variables, you could create API key at https://platform.openai.com/settings/organization/api-keys
+model = ChatAnthropic(model="claude-sonnet-4-5").bind_tools(tools)  # Set ANTHROPIC_API_KEY in environment variables, you could create API key at https://platform.claude.com/settings/keys
 
 
 def should_continue(state: MessagesState) -> Literal["tools", "__end__"]:
