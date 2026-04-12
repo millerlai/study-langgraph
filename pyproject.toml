@@ -11,6 +11,8 @@ dependencies = [
     "langchain-anthropic>=1.4.0",
     "langchain-openai>=1.1.12",
     "langgraph>=1.1.6",
+    "langgraph-checkpoint>=4.0.1",
+    "langgraph-checkpoint-postgres>=3.0.5",
     "langgraph-checkpoint-sqlite>=3.0.3",
     "python-dotenv>=1.2.2",
 ]

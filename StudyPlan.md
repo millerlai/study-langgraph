@@ -63,7 +63,7 @@
   - 基於條件的路由
   - LLM 驅動的動態路由
 
-- [ ] **3.4 Graph 視覺化** → [詳細筆記](src/phase03/3.4-graph-visualization.md)
+- [x] **3.4 Graph 視覺化** → [詳細筆記](src/phase03/3.4-graph-visualization.md)
   - Mermaid 圖表輸出
   - PNG 渲染
 
@@ -71,12 +71,12 @@
 
 ## Phase 4: 持久化與 Checkpointing
 
-- [ ] **4.1 Checkpointing 概念** → [詳細筆記](src/phase04/4.1-checkpointing-concepts.md)
+- [x] **4.1 Checkpointing 概念** → [詳細筆記](src/phase04/4.1-checkpointing-concepts.md)
   - Thread（對話/工作階段）
   - Checkpoint（State 快照）
   - Super-step（單次執行 tick）
 
-- [ ] **4.2 Checkpointer 實作** → [詳細筆記](src/phase04/4.2-checkpointer-implementations.md)
+- [x] **4.2 Checkpointer 實作** → [詳細筆記](src/phase04/4.2-checkpointer-implementations.md)
   - `InMemorySaver`（開發用）
   - `SqliteSaver`（本地）
   - `PostgresSaver`（正式環境）
@@ -280,6 +280,38 @@
 - [ ] **16.3 序列化與安全** → [詳細筆記](src/phase16/16.3-serialization-security.md)
   - `JsonPlusSerializer`
   - `EncryptedSerializer`（加密持久化）
+
+---
+
+## 預估研讀時間表
+
+以下為各 Phase 的預估研讀時間，包含閱讀筆記、執行範例程式、以及動手實驗：
+
+| Phase | 主題 | 筆記 | 範例 | 內容量 | 預估時間 | 難度 | 完成 |
+|-------|------|:----:|:----:|-------:|:--------:|:----:|:----:|
+| 01 | 基礎概念 | 3 篇 | 7 支 | ~2,500 行 | 4-5 hr | ★☆☆ | [x] |
+| 02 | State 管理深入 | 3 篇 | 17 支 | ~2,200 行 | 4-5 hr | ★★☆ | [x] |
+| 03 | 控制流與圖結構 | 4 篇 | 17 支 | ~2,300 行 | 5-6 hr | ★★☆ | [x] |
+| 04 | 持久化與 Checkpointing | 3 篇 | 16 支 | ~1,800 行 | 4-5 hr | ★★☆ | [ ] |
+| 05 | Human-in-the-Loop | 2 篇 | 14 支 | ~1,500 行 | 3-4 hr | ★★☆ | [ ] |
+| 06 | Streaming | 2 篇 | 15 支 | ~1,200 行 | 3-4 hr | ★★☆ | [ ] |
+| 07 | 記憶系統 | 2 篇 | 11 支 | ~1,600 行 | 3-4 hr | ★★☆ | [ ] |
+| 08 | Time Travel | 1 篇 | 6 支 | ~600 行 | 2-3 hr | ★★☆ | [ ] |
+| 09 | 子圖與模組化 | 2 篇 | 8 支 | ~1,400 行 | 3-4 hr | ★★★ | [ ] |
+| 10 | Multi-Agent 系統 | 2 篇 | 8 支 | ~1,700 行 | 4-5 hr | ★★★ | [ ] |
+| 11 | Functional API | 1 篇 | 10 支 | ~700 行 | 2-3 hr | ★★☆ | [ ] |
+| 12 | 工具與整合 | 3 篇 | 8 支 | ~1,700 行 | 3-4 hr | ★★☆ | [ ] |
+| 13 | 進階應用模式 | 4 篇 | 11 支 | ~2,900 行 | 6-8 hr | ★★★ | [ ] |
+| 14 | 部署與平台 | 3 篇 | 9 支 | ~1,500 行 | 3-4 hr | ★★☆ | [ ] |
+| 15 | 可觀測性與除錯 | 2 篇 | 6 支 | ~1,100 行 | 2-3 hr | ★★☆ | [ ] |
+| 16 | 正式環境與錯誤處理 | 3 篇 | 14 支 | ~2,000 行 | 4-5 hr | ★★★ | [ ] |
+| **合計** | | **42 篇** | **177 支** | **~26,700 行** | **55-72 hr** | |
+
+> **說明**
+> - 預估時間含閱讀筆記 + 執行/研讀範例 + 動手修改實驗
+> - ★☆☆ 入門 / ★★☆ 中等 / ★★★ 進階（需較多背景知識或概念較抽象）
+> - 若每天投入 2 小時，預計 4-5 週可完成全部課程
+> - Phase 01-04 為核心基礎，建議優先扎實學習；Phase 09-10, 13, 16 為進階主題，可視需求深入
 
 ---
 
