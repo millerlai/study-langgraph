@@ -24,20 +24,22 @@ def research(state: State) -> dict:
     """研究節點"""
     return {
         "results": ["[Research] 找到 3 篇相關論文"],
-        "status": "researching",
+        # ⚠️ 不可在此更新 status！
+        # 平行節點同時更新無 Reducer 的欄位 → InvalidUpdateError
     }
 
 def analyze(state: State) -> dict:
     """分析節點"""
     return {
         "results": ["[Analyze] 完成數據分析"],
-        "status": "analyzing",
+        # ⚠️ 同理，不可在此更新 status
     }
 
 def summarize(state: State) -> dict:
-    """彙總節點"""
+    """彙總節點（非平行，可安全更新 status）"""
     return {
         "results": ["[Summary] " + " | ".join(state["results"])],
+        "status": "done",
     }
 
 # ============================================================
@@ -68,10 +70,11 @@ print("Results:", result["results"])
 # Results: [
 #     "[Research] 找到 3 篇相關論文",
 #     "[Analyze] 完成數據分析",
-#     "[Summary] [Research] ... | [Analyze] ..."
+#     "[Summary] [Research] 找到 3 篇相關論文 | [Analyze] 完成數據分析"
 # ]
 # → results 欄位透過 Reducer 正確合併了兩個平行節點的輸出
 
 print("Status:", result["status"])
-# Status: 取決於哪個節點最後完成（不確定性！）
-# → status 欄位沒有 Reducer，平行更新時會覆蓋，結果不可預測
+# Status: done
+# → status 欄位沒有 Reducer，只能在非平行的 summarize 節點更新
+# → 若平行節點同時更新無 Reducer 的欄位，LangGraph 會拋出 InvalidUpdateError
