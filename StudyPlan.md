@@ -53,13 +53,13 @@
   - 迴圈（Loops）
   - 迴圈 + 分支組合
 
-- [ ] **3.2 進階控制流** → [詳細筆記](src/phase03/3.2-advanced-control-flow.md)
+- [x] **3.2 進階控制流** → [詳細筆記](src/phase03/3.2-advanced-control-flow.md)
   - 平行執行（Parallel Nodes）
   - 延遲執行（Deferred Nodes）
   - Map-Reduce 與 `Send` API
   - 遞迴限制（`GRAPH_RECURSION_LIMIT`）
 
-- [ ] **3.3 Router 路由模式** → [詳細筆記](src/phase03/3.3-router-patterns.md)
+- [x] **3.3 Router 路由模式** → [詳細筆記](src/phase03/3.3-router-patterns.md)
   - 基於條件的路由
   - LLM 驅動的動態路由
 

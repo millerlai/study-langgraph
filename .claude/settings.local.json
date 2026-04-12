@@ -29,7 +29,12 @@
       "Bash(uv run:*)",
       "Bash(git reset:*)",
       "Bash(find src/phase* -name '*.py')",
-      "Bash(uv add:*)"
+      "Bash(uv add:*)",
+      "Bash(find src/phase* -name '*.md')",
+      "Bash(grep -rn '流程' src/phase*/*.md)",
+      "Bash(grep -rn '### .*流程' src/phase*/*.md)",
+      "Bash(grep -v '```')",
+      "Bash(grep -rn '```mermaid' src/phase*/*.md)"
     ]
   }
 }
