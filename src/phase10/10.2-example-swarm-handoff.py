@@ -16,6 +16,8 @@ from langchain.tools import tool, ToolRuntime
 from langgraph.graph import StateGraph, START, END
 from langgraph.types import Command
 from typing_extensions import NotRequired
+from dotenv import load_dotenv
+load_dotenv()  # loads .env into os.environ
 
 # ============================================================
 # 1. 定義 State

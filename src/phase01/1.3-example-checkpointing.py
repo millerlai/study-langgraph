@@ -15,6 +15,8 @@ from langchain_core.tools import tool
 from langgraph.graph import StateGraph, MessagesState, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
 from langgraph.checkpoint.memory import InMemorySaver
+from dotenv import load_dotenv
+load_dotenv()  # loads .env into os.environ
 
 # ============================================================
 # 1. 定義工具（同範例二）

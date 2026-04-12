@@ -9,6 +9,8 @@
 from langchain.tools import tool
 from langchain.agents import create_agent
 from langchain.chat_models import init_chat_model
+from dotenv import load_dotenv
+load_dotenv()  # loads .env into os.environ
 
 # ============================================================
 # 1. 定義底層工具（子 Agent 使用的）
