@@ -25,6 +25,8 @@ class RetrievalOutput(TypedDict):
     relevance_scores: list[float]                    # 相關性分數（私有）
 
 # 清洗階段的輸入
+# 注意：實務上 CleaningInput 與 RetrievalOutput 結構相同，可共用同一個 class。
+#       這裡分開定義純粹是為了展示「上游輸出 → 下游輸入」的資料流方向。
 class CleaningInput(TypedDict):
     raw_documents: list[str]
     relevance_scores: list[float]
